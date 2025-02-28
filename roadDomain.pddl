@@ -1,36 +1,24 @@
 (define (domain road)
     (:requirements :strips :typing)
-    
     (:types
-        location
-        agent
+        vehicle location - object
+        bulldozer - vehicle
     )
     
     (:predicates
-        (at ?agent - agent ?loc - location)
-        (adjacent ?from ?to - location)
-        (rubble ?loc - location)
-        (dozer ?agent - agent)
+        (at ?v - vehicle ?l - location)
+        (adjacent ?l1 ?l2 - location)
+        (rubble ?l - location)
     )
     
     (:action move
-        :parameters (?agent - agent ?from ?to - location)
-        :precondition (and
-            (at ?agent ?from)
-            (adjacent ?from ?to)
-            (not (rubble ?from)))
-        :effect (and
-            (not (at ?agent ?from))
-            (at ?agent ?to)
-        )
+        :parameters (?v - vehicle ?from ?to - location)
+        :precondition (and (at ?v ?from) (adjacent ?from ?to) (not (rubble ?from)))
+        :effect (and (not (at ?v ?from)) (at ?v ?to))
     )
-
     (:action clear
-        :parameters (?agent - agent ?loc - location)
-        :precondition (and
-            (at ?agent ?loc)
-            (rubble ?loc)
-            (dozer ?agent))
-        :effect (not (rubble ?loc))
+        :parameters (?b - bulldozer ?l - location)
+        :precondition (and (at ?b ?l) (rubble ?l))
+        :effect (not (rubble ?l))
     )
 )

@@ -1,17 +1,18 @@
 (define (problem road)
     (:domain road)
     (:objects
-        loc1 loc2 loc3 - location
-        agent1 agent2 - agent)
-    (:init
-        (dozer agent2)
-        (at agent1 loc1)
-        (at agent2 loc1)
-        (rubble loc2)
-        (adjacent loc1 loc2)
-        (adjacent loc2 loc1)
-        (adjacent loc2 loc3)
-        (adjacent loc3 loc2)
+        v1 - vehicle
+        v2 - bulldozer
+        l1 l2 l3 - location
     )
-    (:goal (at agent1 loc3))
+    (:init
+        (at v1 l1)
+        (at v2 l1)
+        (rubble l2)
+        (adjacent l1 l2)
+        (adjacent l2 l1)
+        (adjacent l2 l3)
+        (adjacent l3 l2)
+    )
+    (:goal (at v1 l3))
 )
