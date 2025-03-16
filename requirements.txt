@@ -1,3 +1,1 @@
-pyperplan
-networkx
-matplotlib
+owlready2

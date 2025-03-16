@@ -1,0 +1,404 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/yaggi/bcdc/symbolic-ai-planning/road/"
+     xml:base="http://www.semanticweb.org/yaggi/bcdc/symbolic-ai-planning/road/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+     xmlns:swrla="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#"
+     xmlns:swrlb="http://www.w3.org/2003/11/swrlb#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/yaggi/bcdc/symbolic-ai-planning/road"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled -->
+
+    <owl:AnnotationProperty rdf:about="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/yaggi/bcdc/symbolic-ai-planning/road#adjacentTo -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/yaggi/bcdc/symbolic-ai-planning/road#adjacentTo">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/yaggi/bcdc/symbolic-ai-planning/road#RoadSection"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/yaggi/bcdc/symbolic-ai-planning/road#RoadSection"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/yaggi/bcdc/symbolic-ai-planning/road#at -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/yaggi/bcdc/symbolic-ai-planning/road#at">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/yaggi/bcdc/symbolic-ai-planning/road#Agent"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/yaggi/bcdc/symbolic-ai-planning/road#RoadSection"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/yaggi/bcdc/symbolic-ai-planning/road#canClear -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/yaggi/bcdc/symbolic-ai-planning/road#canClear">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/yaggi/bcdc/symbolic-ai-planning/road#Bulldozer"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/yaggi/bcdc/symbolic-ai-planning/road#canMove -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/yaggi/bcdc/symbolic-ai-planning/road#canMove">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/yaggi/bcdc/symbolic-ai-planning/road#Agent"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/yaggi/bcdc/symbolic-ai-planning/road#isClear -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/yaggi/bcdc/symbolic-ai-planning/road#isClear">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/yaggi/bcdc/symbolic-ai-planning/road#RoadSection"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/yaggi/bcdc/symbolic-ai-planning/road#Agent -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yaggi/bcdc/symbolic-ai-planning/road#Agent">
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/yaggi/bcdc/symbolic-ai-planning/road#RoadSection"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yaggi/bcdc/symbolic-ai-planning/road#Bulldozer -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yaggi/bcdc/symbolic-ai-planning/road#Bulldozer">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yaggi/bcdc/symbolic-ai-planning/road#Robot"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yaggi/bcdc/symbolic-ai-planning/road#RoadSection -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yaggi/bcdc/symbolic-ai-planning/road#RoadSection"/>
+    
+
+
+    <!-- http://www.semanticweb.org/yaggi/bcdc/symbolic-ai-planning/road#Robot -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yaggi/bcdc/symbolic-ai-planning/road#Robot">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yaggi/bcdc/symbolic-ai-planning/road#Agent"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Rules
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/yaggi/bcdc/symbolic-ai-planning/road/a">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/yaggi/bcdc/symbolic-ai-planning/road/rs">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/yaggi/bcdc/symbolic-ai-planning/road/b">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment>Checks if agent cannot move</rdfs:comment>
+        <rdfs:label>CannotMoveRule</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/yaggi/bcdc/symbolic-ai-planning/road#Agent"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/yaggi/bcdc/symbolic-ai-planning/road/a"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/yaggi/bcdc/symbolic-ai-planning/road#at"/>
+                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/yaggi/bcdc/symbolic-ai-planning/road/a"/>
+                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/yaggi/bcdc/symbolic-ai-planning/road/rs"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/yaggi/bcdc/symbolic-ai-planning/road#isClear"/>
+                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/yaggi/bcdc/symbolic-ai-planning/road/rs"/>
+                                        <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</swrl:argument2>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/yaggi/bcdc/symbolic-ai-planning/road#canMove"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/yaggi/bcdc/symbolic-ai-planning/road/a"/>
+                        <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</swrl:argument2>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment>Checks if agent can move</rdfs:comment>
+        <rdfs:label>CanMoveRule</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/yaggi/bcdc/symbolic-ai-planning/road#Agent"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/yaggi/bcdc/symbolic-ai-planning/road/a"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/yaggi/bcdc/symbolic-ai-planning/road#at"/>
+                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/yaggi/bcdc/symbolic-ai-planning/road/a"/>
+                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/yaggi/bcdc/symbolic-ai-planning/road/rs"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/yaggi/bcdc/symbolic-ai-planning/road#isClear"/>
+                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/yaggi/bcdc/symbolic-ai-planning/road/rs"/>
+                                        <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrl:argument2>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/yaggi/bcdc/symbolic-ai-planning/road#canMove"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/yaggi/bcdc/symbolic-ai-planning/road/a"/>
+                        <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrl:argument2>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment>Checks if bulldozer can clear</rdfs:comment>
+        <rdfs:label>CanClearRule</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/yaggi/bcdc/symbolic-ai-planning/road#Bulldozer"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/yaggi/bcdc/symbolic-ai-planning/road/b"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/yaggi/bcdc/symbolic-ai-planning/road#at"/>
+                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/yaggi/bcdc/symbolic-ai-planning/road/b"/>
+                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/yaggi/bcdc/symbolic-ai-planning/road/rs"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/yaggi/bcdc/symbolic-ai-planning/road#isClear"/>
+                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/yaggi/bcdc/symbolic-ai-planning/road/rs"/>
+                                        <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</swrl:argument2>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/yaggi/bcdc/symbolic-ai-planning/road#canClear"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/yaggi/bcdc/symbolic-ai-planning/road/b"/>
+                        <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrl:argument2>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment>Checks if bulldozer can clear</rdfs:comment>
+        <rdfs:label>CannotClearRule</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/yaggi/bcdc/symbolic-ai-planning/road#Bulldozer"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/yaggi/bcdc/symbolic-ai-planning/road/b"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/yaggi/bcdc/symbolic-ai-planning/road#at"/>
+                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/yaggi/bcdc/symbolic-ai-planning/road/b"/>
+                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/yaggi/bcdc/symbolic-ai-planning/road/rs"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/yaggi/bcdc/symbolic-ai-planning/road#isClear"/>
+                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/yaggi/bcdc/symbolic-ai-planning/road/rs"/>
+                                        <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrl:argument2>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/yaggi/bcdc/symbolic-ai-planning/road#canClear"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/yaggi/bcdc/symbolic-ai-planning/road/b"/>
+                        <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</swrl:argument2>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+
