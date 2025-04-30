@@ -1,0 +1,15 @@
+services:
+  fast-downward:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: fast-downward
+    container_name: fast-downward
+    privileged: true
+    environment:
+      - DISPLAY
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix
+      - .././:/planning
+    working_dir: /planning
+    command: ["bash"]
