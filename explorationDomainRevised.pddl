@@ -11,7 +11,10 @@
         (can-observe ?r - robot ?l - location)
         (is-terrain ?l - location ?t - terrain)
         (can-traverse-terrain ?r - robot ?t - terrain)
-        (adjacent ?l1 - location ?l2 - location)
+        (north ?l1 - location ?l2 - location)
+        (south ?l1 - location ?l2 - location)
+        (west ?l1 - location ?l2 - location)
+        (east ?l1 - location ?l2 - location)
     )
 
     (:functions
@@ -23,7 +26,12 @@
         :parameters (?r - robot ?from ?to - location ?t - terrain)
         :precondition (and
             (at ?r ?from)
-            (adjacent ?from ?to)
+            (or
+              (north ?from ?to)
+              (south ?from ?to)
+              (west ?from ?to)
+              (east ?from ?to)
+            )
             (is-terrain ?to ?t)
             (can-traverse-terrain ?r ?t)
         )
